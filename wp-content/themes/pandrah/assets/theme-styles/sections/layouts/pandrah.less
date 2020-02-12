@@ -1,0 +1,43 @@
+.pandrah {
+	display: block;
+	clear: both;
+	overflow: auto;
+	&:first-child {
+		margin-top: 0; 
+		padding-top: 10px;
+	}
+	.featured-thumb {
+		img { border-radius: 70px;
+			@media screen and (max-width: 767px) {
+					border-radius: 5px;
+				}
+			}
+	}
+	.out-thumb {
+		color: @content;
+		.entry-title {
+			margin-bottom: 20px;
+			font-size: 23px;
+			line-height: 1.4em;
+			a {
+				color: @accent;
+				&:hover {
+					color: fade(@accent, 80%);
+				}
+			}
+		}
+		.entry-excerpt {
+			margin-bottom: 20px;
+			font-family: "Georgia", "serif";
+			color: @content;
+		}
+		.postedon {
+			color: @content;
+		}
+		.postedon a {
+			font-weight: bold;
+			color: #444;
+			color: @content;
+		}
+	}
+}

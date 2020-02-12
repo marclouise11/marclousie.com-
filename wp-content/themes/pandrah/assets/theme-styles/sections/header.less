@@ -1,0 +1,251 @@
+/* ---------- Header ------------- */
+.top-container {
+	padding: 0 15px;
+	color: #eee;
+	@media screen and (max-width: 767px) {
+		display: block;
+		padding: 0;
+	}
+}
+
+.container {
+	@media screen and (max-width: 767px) {
+		padding: 0 6px;
+	}
+}
+#masthead {
+  position: relative;
+  z-index: 90;
+  clear: both;
+  background: #101010;
+  background: linear-gradient(#101010 0%, #313131 100%);
+  background-size: cover;
+  .layer {
+    background: fade(black, 0%);
+  }
+  #text-title-desc {
+    clear: none;
+    float: left;
+    vertical-align: middle;
+    padding-left: 10px;
+    @media screen and (max-width: 767px) { padding-left: 5px; }
+  } 
+  .site-branding {
+    padding: 14px 0;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+    	order: 2;
+    }
+
+    @media screen and (max-width: 767px) {
+	    padding: 18px 5px;
+	    width: auto;
+    }
+  }
+  .site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0;
+    a {
+      color: @accent;
+    }
+  }
+  #searchicon {
+	  cursor: pointer;
+  }
+  #site-logo {
+    display: inline-block;
+    float: left;
+  }
+  .menu-link {
+	  @media screen and (max-width: 767px) {
+	  order: 1;
+	  padding: 17px;
+	  i {
+		  background: #333;
+		  padding: 4px 8px;
+		  display: inline-block;
+		  border-radius: 2px;
+		  padding-bottom: 5px;
+	  }
+	  }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+	.top-container {
+		background: fade(black, 10%);
+	}
+	#menu {
+		z-index: 99999;
+		background: #333;
+		ul {
+			margin-top: 20px;
+			margin-left: 0;
+			padding-left: 0;
+			list-style: none;
+			text-align: left;
+			a {
+				display: block;
+				width: 100%;
+				padding: 10px 15px;
+				border-bottom: solid 1px #424242;
+				color: #eee;
+			}
+		}
+	}
+}
+
+#social {
+	text-align: right;
+	float: right;
+	@media screen and (max-width: 767px) {
+		width: auto;
+	}
+	a {
+		color: #ddd;
+		padding: 18px 2px;
+		display: inline-block;
+		&:hover {
+			color: @accent;
+		}
+	}
+	@media screen and (max-width: 767px) {
+		float: right;
+		a {
+			padding: 20px 2px;
+		}
+	}
+}
+
+#jumbosearch {
+	background: linear-gradient(to left, @accent, darken(@accent, 10%), saturate(@accent, 10%));
+	padding: 30px 10px;
+	width: 100%;
+	display: none;
+	label {
+		width: 100%;
+	}
+	input[type="search"] {
+		width: ~"calc(100% - 200px)";
+		padding: 13px;
+		background: none;
+		border: solid 2px white;
+		.placeholder(white);
+		color: white;
+		&:focus {
+			outline: none;
+		}
+	}
+	input[type="submit"] {
+		width: 150px;
+		padding: 19px;
+		background: white;
+		color: @accent;
+		box-shadow: none;
+		font-size: 16px;
+		position: relative;
+		border: none;
+		top: 0px;
+		margin-left: 5px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	@media screen and (max-width: 767px) {
+		input[type="submit"] {
+			width: 100px;
+		}
+		label {
+			width: ~"calc(100% - 120px)";
+		}
+	}
+}
+
+#header-image {
+	margin-top: 30px;
+	img {
+		border: solid 4px #333;
+		border-radius: 30px;
+	}
+	@media screen and (max-width: 767px) {
+		img {
+			border-radius: 0px;
+			border-left: 0;
+			border-right: 0;
+		}
+		margin-bottom: 20px;
+		margin-top: 0px;
+		padding: 0;
+		
+	}
+}
+
+#featured-posts {
+	padding: 0;
+	margin: 60px auto;
+	margin-top: 45px;
+	margin-bottom: 40px;
+	.title {
+		font-weight: bold;
+		font-size: 16px;
+		margin-top: 12px;
+		color: darken(@content,10%); 
+		transition: 0.4s all ease;
+		
+	}
+	.fp-item:hover {
+		.title {
+			color: lighten(@content, 16%);
+		}
+	}
+	.thumb {
+		position: relative;
+		&:after {
+			content: "";
+			height: 4px;
+			background: @accent;
+			background: linear-gradient(to right,darken(#e0c3fc,3%) ,#1de9b6);
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transition: 0.4s all ease;
+			transform-origin: center;
+			opacity: 0;
+		}
+	}
+	.fp-item:hover {
+		.thumb:after {
+			width: 100%;
+			opacity: 1; 
+			filter: brightness(0.9);
+		}
+
+	}
+	
+	@media screen and (max-width: 767px) {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		padding: 0 20px;
+		.fp-item {
+			display: block;
+			clear: both;
+			margin-bottom: 20px;
+			.thumb {
+				width: 100px;
+				float: left;
+				margin-right: 15px;
+				margin-bottom: 20px;
+			}
+			.title {
+				padding-top: 5px;
+			}
+		}
+	}
+}
