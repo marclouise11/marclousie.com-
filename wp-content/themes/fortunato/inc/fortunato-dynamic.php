@@ -50,6 +50,7 @@ if ( ! function_exists( 'fortunato_social_buttons' ) ) {
 		$okruURL = get_theme_mod('fortunato_theme_options_okruurl', '');
 		$telegramURL = get_theme_mod('fortunato_theme_options_telegramurl', '');
 		$imdbURL = get_theme_mod('fortunato_theme_options_imdburl', '');
+		$twitchURL = get_theme_mod('fortunato_theme_options_twitchurl', '');
 		$subscribeURL = get_theme_mod('fortunato_theme_options_subscribeurl', '');
 		$skypeNAME = get_theme_mod('fortunato_theme_options_skypename', '');
 		?>
@@ -103,6 +104,9 @@ if ( ! function_exists( 'fortunato_social_buttons' ) ) {
 		<?php endif; ?>
 		<?php if (!empty($imdbURL)) : ?>
 			<a href="<?php echo esc_url($imdbURL); ?>" title="<?php esc_attr_e( 'Imdb', 'fortunato' ); ?>"><i class="fab fa-imdb spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Imdb', 'fortunato' ); ?></span></i></a>
+		<?php endif; ?>
+		<?php if (!empty($twitchURL)) : ?>
+			<a href="<?php echo esc_url($twitchURL); ?>" title="<?php esc_attr_e( 'Twitch', 'fortunato' ); ?>"><i class="fab fa-twitch spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'fortunato' ); ?></span></i></a>
 		<?php endif; ?>
 		<?php if (!empty($subscribeURL)) : ?>
 			<a href="<?php echo esc_url($subscribeURL); ?>" title="<?php esc_attr_e( 'Subscribe', 'fortunato' ); ?>"><i class="fas fa-user-plus spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Subscribe', 'fortunato' ); ?></span></i></a>
@@ -267,6 +271,11 @@ function fortunato_color_primary_register( $wp_customize ) {
 	'slug'=>'imdburl', 
 	'default' => '',
 	'label' => __('Imdb URL', 'fortunato')
+	);
+	$socialmedia[] = array(
+	'slug'=>'twitchurl', 
+	'default' => '',
+	'label' => __('Twitch URL', 'fortunato')
 	);
 	$socialmedia[] = array(
 	'slug'=>'subscribeurl', 
@@ -544,13 +553,27 @@ if( ! function_exists('fortunato_allowed_html')){
 			'dl' => array(),
 			'dt' => array(),
 			'em' => array(),
-			'h1' => array(),
-			'h2' => array(),
-			'h3' => array(),
-			'h4' => array(),
-			'h5' => array(),
-			'h6' => array(),
-			'i' => array(),
+			'h1' => array(
+				'class'  => array(),
+			),
+			'h2' => array(
+				'class'  => array(),
+			),
+			'h3' => array(
+				'class'  => array(),
+			),
+			'h4' => array(
+				'class'  => array(),
+			),
+			'h5' => array(
+				'class'  => array(),
+			),
+			'h6' => array(
+				'class'  => array(),
+			),
+			'i' => array(
+				'class'  => array(),
+			),
 			'br' => array(),
 			'img' => array(
 				'alt'    => array(),

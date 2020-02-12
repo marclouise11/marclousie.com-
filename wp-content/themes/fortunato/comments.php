@@ -75,16 +75,16 @@ if ( post_password_required() ) {
 	$fields =  array(
 		'author' => '<div class="blockCommentLeft"><p class="comment-form-author"><label for="author"><span class="screen-reader-text">' . __( 'Name *'  , 'fortunato' ) . '</span></label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Name *'  , 'fortunato' ) . '"/></p>',
 		'email'  => '<p class="comment-form-email"><label for="email"><span class="screen-reader-text">' . __( 'Email *'  , 'fortunato' ) . '</span></label><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Email *'  , 'fortunato' ) . '"/></p>',
-		'url'    => '<p class="comment-form-url"><label for="url"><span class="screen-reader-text">' . __( 'Website *'  , 'fortunato' ) . '</span></label><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Website'  , 'fortunato' ) . '"/></p></div>',
+		'url'    => '<p class="comment-form-url"><label for="url"><span class="screen-reader-text">' . __( 'Website'  , 'fortunato' ) . '</span></label><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Website'  , 'fortunato' ) . '"/></p></div>',
 	);
 	$required_text = __(' Required fields are marked ', 'fortunato').' <span class="required">*</span>';
 	?>
 	<?php comment_form( array(
 		'fields' => apply_filters( 'comment_form_default_fields', $fields ),
 		/* translators: %s: wordpress login url */
-		'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' , 'fortunato' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+		'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' , 'fortunato' ), wp_login_url( apply_filters( 'the_permalink', esc_url( get_permalink( ) ) ) ) ) . '</p>',
 		/* translators: 1: profile user link, 2: username, 3: logout link */
-		'logged_in_as' => '<p class="logged-in-as smallPart">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'  , 'fortunato' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p><div class="blockComment">',
+		'logged_in_as' => '<p class="logged-in-as smallPart">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'  , 'fortunato' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', esc_url( get_permalink( ) ) ) ) ) . '</p><div class="blockComment">',
 		'comment_notes_before' => '<p class="comment-notes smallPart">' . __( 'Your email address will not be published.'  , 'fortunato' ) . ( $req ? $required_text : '' ) . '</p><div class="blockComment double">',
 		'title_reply' => __( 'Leave a Reply'  , 'fortunato' ),
 		/* translators: %s: name of person to reply */

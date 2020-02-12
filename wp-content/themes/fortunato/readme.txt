@@ -3,7 +3,8 @@ Contributors: CrestaProject
 Tags: one-column, left-sidebar, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, blog, news, e-commerce
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.9.1
+Stable tag: 1.9.3
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Fortunato WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -30,9 +31,17 @@ Fortunato includes support for Infinite Scroll in Jetpack and WooCommerce.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * FontAwesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
 * Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
-* Image used in Theme Screenshot (https://pixabay.com/it/cat-felino-naso-animale-close-up-1209320/) Pexels Free photos for commercial and personal works
+* Image used in Theme Screenshot by PxHere.com https://pxhere.com/en/photo/1080181 Licensed under CC0
 
 == Changelog ==
+= Version 1.9.3 =
+* Added Twitch social icon
+* Minor bug fixes
+
+= Version 1.9.2 =
+* Updated FontAwesome to 5.12.0 version
+* Minor bug fixes
+
 = Version 1.9.1 =
 * Improved WooCommerce style
 
